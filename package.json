@@ -1,0 +1,8 @@
+{
+  "name": "JSTDD-course",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/diogens/js-tdd.git",
+  "author": "Diogenes Oliveira <diogensgreen@gmail.com>",
+  "license": "MIT"
+}
