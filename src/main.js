@@ -21,8 +21,4 @@ const FizzBuzz = num => {
   return num;
 };
 
-function foo() {
-  return "blabal";
-}
-
 export default FizzBuzz;

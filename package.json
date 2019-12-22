@@ -19,7 +19,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/*.js",
-    "prepush": "yarn run lint && yarn test:coverage",
+    "prepush": "yarn test:coverage",
     "test": "mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "mocha tests/**/*.spec.js --require babel-register --watch",
     "test:coverage": "nyc npm run test"
