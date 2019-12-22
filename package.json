@@ -2,21 +2,37 @@
   "name": "JSTDD-course",
   "version": "1.0.0",
   "main": "index.js",
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
   "repository": "https://github.com/diogens/js-tdd.git",
   "author": "Diogenes Oliveira <diogensgreen@gmail.com>",
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/*.js",
-    "prepush": "yarn run lint",
-    "test": "mocha tests/**/*.spec.js",
-    "test:tdd": "mocha tests/**/*.spec.js --watch"
+    "prepush": "yarn run lint && yarn test:coverage",
+    "test": "mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm run test"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
     "husky": "^3.1.0",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1"
   }
 }
